@@ -1,12 +1,33 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background("gold");
+  fill(0);
 }
 
 function draw() {
-  background(255);
-  fill(0);
-  rect(width / 2.5, height / 4, width / 20, height / 2);
-  rect(width - width / 2.5 - width / 20, height / 4, width / 20, height / 2);
-  rect(width / 2.5 + width / 20, height / 4 - width / 20, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
-  rect(width / 2.5 + width / 20, height / 4 + height / 2, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
+  
+}
+
+function mouseClicked(){
+  fill(random(100,200), 0, 0);
+  rect(mouseX, mouseY, 80, 80);
+}
+
+// // when move mouse, draw lines from (0,0) to mouseposition
+// function mouseMoved() {
+// stroke(0);
+// line(0, 0, mouseX, mouseY);
+// }
+
+function mouseDragged(){
+stroke(0);
+line(0, 0, mouseX, mouseY);
+}
+
+function keyPressed(){
+  if (key == 's'){
+    saveCanvas('mycanvas','jpg');
+  } else if (key == 'r');{
+    background('gold');
+  }
 }
