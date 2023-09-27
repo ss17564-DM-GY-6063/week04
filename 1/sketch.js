@@ -1,11 +1,26 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  fill(0);
+}
+
+let xPos = 0;
+let xVelocity = 5; //数字越大，速度越快
+
+function update(){
+
 }
 
 function draw() {
-  background(255);
-  fill(0);
-  rect(width / 2 - width / 40, height / 4 - width / 20, width / 20, height / 2 + width / 10);
-  rect(width / 2.5, height / 4 + height / 2, width - 2 * width / 2.5, width / 20);
-  rect(width / 2 - width / 20 - width / 40, height / 4 - width / 20, width / 20, width / 20);
+  background("pink"); //每运行就会刷新一次新的背景
+  ellipse(xPos, 50, 50, 50);
+  
+  xPos = xPos + xVelocity; 
+  
+  if(xPos > width){
+    xVelocity = -5;
+  }
+  if (xPos < 0){
+    xVelocity = 5;
+  }
+
 }
